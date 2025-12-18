@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wallet - Enviar Dinero</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <link rel="stylesheet" href="envdinero.css">
+</head>
+<body>
+  <div class="container mt-4">
+    <h2>Enviar Dinero</h2>
+    <div class="mb-3">
+        <label for="saldoDisponible">Saldo disponible:</label>
+        <h3 id="saldoDisponible">$0</h3>
+    </div>
+    <h3 class="mt-4">Contactos:</h3>
+    <ul id="contactList" class="list-group">
+    </ul>
+    <br><br>
+    <div class="mb-3">
+        <input type="text" id="searchContact" class="form-control" placeholder="Buscar contacto...">
+    </div>
+    <form id="enviarForm">
+      <div class="form-group mb-3">
+        <label for="destino">Seleccionar contacto:</label><br><br>
+        <select id="destino" class="form-select">
+        </select>
+      </div>
+      <div class="form-group mb-3">
+        <label for="montoEnviar">Monto a enviar:</label><br><br>
+        <input type="number" id="montoEnviar" class="form-control" placeholder="Ej. 1000">
+        <div id="mensaje" style="margin-top:5px;"></div>
+      </div>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#confirmModal">
+        Enviar dinero
+      </button>
+
+      <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="confirmModalLabel">Dinero enviado</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Su dinero ha sido enviado con éxito.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <a href="menu.html" class="btn btn-primary">Menú</a>
+            </div>
+            </div>
+        </div>
+      </div>
+    </form>
+
+    <br>
+    <a href="menu.html" class="btn btn-secondary">Volver al Menú</a>
+  </div>
+
+  <script src="enviardinero.js"></script>
+</body>
+</html>
